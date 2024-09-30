@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的學習歷程網站</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header>
-        <h1>歡迎來到我的學習歷程網站</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="about.html">關於我</a></li>
-                <li><a href="skills.html">技能</a></li>
-                <li><a href="projects.html">項目</a></li>
-                <li><a href="notes.html">學習筆記</a></li>
-                <li><a href="contact.html">聯絡我</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">學習歷程</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">關於我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">技能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">項目</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html">學習筆記</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">聯絡我</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <section>
-            <h2>自我介紹</h2>
-            <p>你好！我是[你的名字]，這個網站記錄了我的學習歷程和成長過程。</p>
-        </section>
-    </main>
+    <!-- 內容區域 -->
+    <div class="container my-5">
+        <div class="text-center">
+            <h1>歡迎來到我的學習歷程網站</h1>
+            <p class="lead">這裡記錄了我的學習旅程和項目經驗。</p>
+        </div>
+    </div>
 
-    <footer>
+    <!-- 頁尾 -->
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 我的學習歷程網站</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
