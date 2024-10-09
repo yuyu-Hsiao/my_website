@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<style type="text/css">
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+</style>
+<script type="text/javascript">
+var product=[];
+var cart=[];
+// 電子商務網站販賣的商品，每項商品包含產品編號(做為此陣列之索引(key))、產品名稱、價格。
+product["p01"] = ["Apple iPhone 12", 28500];
+product["p02"] = ["SONY Xperia 1", 26700];
+product["p03"] = ["ASUS Zenfone 7 ", 18900];
+product["p04"] = ["PHILIPS IPS 螢幕顯示器", 3588];
+product["p05"] = ["Acer TravelMate 筆電", 32900]
+product["p06"] = ["Xbox Series S 主機", 9980]
+// 購物車內容，內含多個已放入購物車的商品，每項商品包含產品編號及數量。
+cart[0] = ["p03", 2];
+cart[1] = ["p06", 1];
+cart[2] = ["p04", 2];
+cart[3] = ["p01", 3];
+
+window.onload=function() {
+  var checkoutDiv = document.getElementById("checkOut");
+  var outputHTML = "<table>";
+  outputHTML += "<tr><th>商品名稱</th><th>價格</th><th>數量</th><th>小計</th></tr>";
+
+  var totalPrice = 0;
+
+  for (var i = 0; i < cart.length; i++) {
+    var productId = cart[i][0];
+    var quantity = cart[i][1];
+
+    var productName = product[productId][0];
+    var unitPrice = product[productId][1];
+    var subtotal = unitPrice * quantity;
+    totalPrice += subtotal;
+
+    outputHTML += "<tr>";
+    outputHTML += "<td>" + productName + "</td>";
+    outputHTML += "<td>" + unitPrice + "</td>";
+    outputHTML += "<td>" + quantity + "</td>";
+    outputHTML += "<td> NT$ " + subtotal + "</td>";
+    outputHTML += "</tr>";
+  }
+
+  outputHTML += "<tr><td colspan='3'>總金額 </td><td style='color :red; font-weight: bold;'> NT$ " + totalPrice + "</td></tr>";
+
+
+  
+  outputHTML += "</table>";
+
+  checkoutDiv.innerHTML = outputHTML;
+};
+
+
+
+</script>
+</head>
+<body>
+<h1>~暨大通識虛擬商店~</h1>
+<div id="checkOut">
+</div>
+</body>
+</html>
